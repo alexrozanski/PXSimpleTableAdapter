@@ -51,14 +51,6 @@
     [self.tableView reloadData];
 }
 
-- (void)deselectRow:(PXSimpleTableRow*)row
-{
-    NSUInteger sectionIndex = [self.sections indexOfObject:row.section];
-    NSUInteger rowIndex = [row.section.rows indexOfObject:row];
-    
-    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
-}
-
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath
 {
     return [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
@@ -72,6 +64,16 @@
 - (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row
 {
     return [row.section.rows indexOfObject:row];
+}
+
+#pragma mark - Selection
+
+- (void)deselectRow:(PXSimpleTableRow*)row
+{
+    NSUInteger sectionIndex = [self.sections indexOfObject:row.section];
+    NSUInteger rowIndex = [row.section.rows indexOfObject:row];
+    
+    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
 }
 
 #pragma mark - Custom Accessors
@@ -136,6 +138,7 @@
     PXSimpleTableRow *row = [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = row.title;
+    cell.imageView.image = row.icon;
     
     if([row isDisclosureRow]) {
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
