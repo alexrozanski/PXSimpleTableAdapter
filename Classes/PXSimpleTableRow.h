@@ -12,19 +12,18 @@
 @interface PXSimpleTableRow : NSObject {
     NSString *_title;
     UIImage *_icon;
-    UIViewController *_viewController;
+    
+    BOOL _disclosureRow;
 }
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *icon;
-@property (nonatomic, retain) UIViewController *viewController;
+@property (nonatomic, assign, getter=isDisclosureRow) BOOL disclosureRow;
 
 + (id)rowWithTitle:(NSString*)title;
 + (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon;
-+ (id)rowWithTitle:(NSString *)title icon:(UIImage*)icon viewController:(UIViewController*)controller;
 
 - (id)initWithTitle:(NSString*)title;
 - (id)initWithTitle:(NSString*)title icon:(UIImage*)icon;
-- (id)initWithTitle:(NSString *)title icon:(UIImage*)icon viewController:(UIViewController*)controller;
 
 @end

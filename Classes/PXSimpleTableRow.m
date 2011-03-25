@@ -13,41 +13,30 @@
 
 @synthesize title = _title;
 @synthesize icon = _icon;
-@synthesize viewController = _viewController;
+@synthesize disclosureRow = _disclosureRow;
 
 + (id)rowWithTitle:(NSString*)title
 {
-    return [self rowWithTitle:title icon:nil viewController:nil];
+    return [self rowWithTitle:title icon:nil];
 }
 
-+ (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon
++ (id)rowWithTitle:(NSString *)title icon:(UIImage*)icon
 {
-    return [self rowWithTitle:title icon:icon viewController:nil];
-}
-
-+ (id)rowWithTitle:(NSString *)title icon:(UIImage*)icon viewController:(UIViewController*)controller
-{
-    return [[[self alloc] initWithTitle:title icon:icon viewController:controller] autorelease];
+    return [[[self alloc] initWithTitle:title icon:icon] autorelease];
 }
 
 #pragma mark - Init/Dealloc
 
 - (id)initWithTitle:(NSString*)title
 {
-    return [self initWithTitle:title icon:nil viewController:nil];
+    return [self initWithTitle:title icon:nil];
 }
 
 - (id)initWithTitle:(NSString*)title icon:(UIImage*)icon
 {
-    return [self initWithTitle:title icon:icon viewController:nil];
-}
-
-- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon viewController:(UIViewController*)controller
-{
     if((self = [super init])) {
         _title = [title copy];
         _icon = [icon retain];
-        _viewController = [controller retain];
     }
     
     return self;
@@ -57,7 +46,6 @@
 {
     [_title release], _title=nil;
     [_icon release], _icon=nil;
-    [_viewController release], _viewController=nil;
     
     [super dealloc];
 }

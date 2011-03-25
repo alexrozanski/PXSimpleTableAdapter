@@ -16,5 +16,6 @@
 }
 
 @property (nonatomic, retain) IBOutlet PXSimpleTableAdapter *tableAdapter;
+@property (nonatomic, retain) 
 
 @end

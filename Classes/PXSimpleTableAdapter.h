@@ -16,8 +16,9 @@
 @interface PXSimpleTableAdapter : NSObject <UITableViewDelegate, UITableViewDataSource> {
     UITableView *tableView;
     NSMutableArray *_sections;
+    BOOL _rowShouldDeselectWhenSelected;
     
-    id <PXSimpleTableAdapterDelegate>delegate;
+    id <PXSimpleTableAdapterDelegate> _delegate;
 }
 
 @property (nonatomic, assign) IBOutlet UITableView *tableView;

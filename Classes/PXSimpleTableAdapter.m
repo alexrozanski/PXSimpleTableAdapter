@@ -13,9 +13,8 @@
 
 @synthesize tableView;
 @synthesize sections = _sections;
-
-@synthesize target;
-@synthesize action;
+@synthesize rowShouldDeselectWhenSelected = _rowShouldDeselectWhenSelected;
+@synthesize delegate = _delegate;
 
 #pragma mark - Init/Dealloc
 
@@ -99,9 +98,17 @@
                                        reuseIdentifier:cellIdentifier] autorelease];
     }
     
+    
     PXSimpleTableRow *row = [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
     
     cell.textLabel.text = row.title;
+    
+    if([row isDisclosureRow]) {
+        cell.accessoryType = UITableViewCellAccessoryDisclosureButton;
+    }
+    else {
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
