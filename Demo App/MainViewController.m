@@ -7,7 +7,9 @@
 //
 
 #import "MainViewController.h"
+
 #import "PXSimpleTableAdapter.h"
+#import "OtherViewController.h"
 
 @implementation MainViewController
 
@@ -64,11 +66,25 @@
     self.tableAdapter = nil;
 }
 
+#pragma mark - View Controllers
+
+- (OtherViewController*)otherViewController
+{
+    if(!_otherViewController) {
+        _otherViewController = [[OtherViewController alloc] initWithNibName:@"OtherView" bundle:nil];
+    }
+    
+    return _otherViewController;
+}
+
 #pragma mark - Table Adapter
 
 - (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section
 {
-    NSLog(@"selected");
+    self.otherViewController.navigationItem.title = row.title;
+    
+    [self.navigationController pushViewController:self.otherViewController animated:YES];
+    [adapter deselectRow:row inSection:section];
 }
 
 @end

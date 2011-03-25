@@ -50,6 +50,14 @@
     [self.tableView reloadData];
 }
 
+- (void)deselectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section
+{
+    NSUInteger sectionIndex = [self.sections indexOfObject:section];
+    NSUInteger rowIndex = [section.rows indexOfObject:row];
+    
+    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
+}
+
 #pragma mark - Custom Accessors
 
 - (void)setTableView:(UITableView*)newTableView
@@ -104,7 +112,7 @@
     cell.textLabel.text = row.title;
     
     if([row isDisclosureRow]) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureButton;
+        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     else {
         cell.accessoryType = UITableViewCellAccessoryNone;
@@ -129,7 +137,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([self.delegate conformsToProtocol:@protocol(PXSimpleTableAdapterDelegate)]) {
+    if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:inSection:)]) {
         PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
         PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
         

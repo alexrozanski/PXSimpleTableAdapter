@@ -21,6 +21,7 @@
 		D2D67E37133C9CEB0080953D /* PXSimpleTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E36133C9CEB0080953D /* PXSimpleTableRow.m */; };
 		D2D67E3C133CAB360080953D /* OtherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E3A133CAB350080953D /* OtherViewController.m */; };
 		D2D67E3D133CAB360080953D /* OtherView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E3B133CAB360080953D /* OtherView.xib */; };
+		D2D67E40133CB2160080953D /* README.markdown in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E3F133CB2150080953D /* README.markdown */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		D2D67E39133CAB350080953D /* OtherViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = OtherViewController.h; path = "Demo App/OtherViewController.h"; sourceTree = SOURCE_ROOT; };
 		D2D67E3A133CAB350080953D /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherViewController.m; path = "Demo App/OtherViewController.m"; sourceTree = SOURCE_ROOT; };
 		D2D67E3B133CAB360080953D /* OtherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OtherView.xib; path = "Demo App/OtherView.xib"; sourceTree = SOURCE_ROOT; };
+		D2D67E3F133CB2150080953D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +70,7 @@
 		D27E87A3133C928900D23593 = {
 			isa = PBXGroup;
 			children = (
+				D2D67E3F133CB2150080953D /* README.markdown */,
 				D27E87B8133C928A00D23593 /* PXSimpleTableAdapter */,
 				D27E87CC133C929800D23593 /* Demo App */,
 				D27E87B1133C928A00D23593 /* Frameworks */,
@@ -215,6 +218,7 @@
 				D2D67E20133C948B0080953D /* MainWindow.xib in Resources */,
 				D2D67E33133C99B40080953D /* MainView.xib in Resources */,
 				D2D67E3D133CAB360080953D /* OtherView.xib in Resources */,
+				D2D67E40133CB2160080953D /* README.markdown in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

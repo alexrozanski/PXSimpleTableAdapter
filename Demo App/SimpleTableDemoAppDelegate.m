@@ -19,8 +19,13 @@
     
     //Add the main view
     MainViewController *controller = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
-    self.window.rootViewController = controller;
+    
+    UINavigationController *navController = [[UINavigationController alloc] initWithRootViewController:controller];
+    controller.navigationItem.title = @"Demo";
     [controller release];
+    
+    self.window.rootViewController = navController;
+    [navController release];
     
     return YES;
 }
