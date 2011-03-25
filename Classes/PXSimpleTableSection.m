@@ -49,7 +49,7 @@
 
 - (void)dealloc
 {
-    [_rows release], _roww=nil;
+    [_rows release], _rows=nil;
     [_sectionHeaderTitle release], _sectionHeaderTitle=nil;
     [_sectionFooterTitle release], _sectionFooterTitle=nil;
     
