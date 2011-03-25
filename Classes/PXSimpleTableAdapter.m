@@ -51,18 +51,22 @@
     
     [_sections release];
     _sections = s;
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - UITableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 0;
+    return [self.sections count];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 0;
+    PXSimpleTableSection *theSection = [self.sections objectAtIndex:section];
+    
+    return [theSection.rows count];
 }
 
 - (UITableViewCell*)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -76,7 +80,25 @@
                                        reuseIdentifier:cellIdentifier] autorelease];
     }
     
+    PXSimpleTableRow *row = [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = row.title;
+    
     return cell;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    PXSimpleTableSection *theSection = [self.sections objectAtIndex:section];
+    
+    return theSection.sectionHeaderTitle;
+}
+
+- (NSString*)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section
+{
+    PXSimpleTableSection *theSection = [self.sections objectAtIndex:section];
+    
+    return theSection.sectionFooterTitle;
 }
 
 @end
