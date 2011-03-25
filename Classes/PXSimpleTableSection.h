@@ -25,4 +25,10 @@
 @property (nonatomic, copy) NSString *sectionFooterTitle;
 @property (nonatomic, retain) NSArray *rows;
 
+- (id)initWithRows:(NSArray*)rows;
+- (id)initWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows;
+
++ (id)sectionWithRows:(NSArray*)rows;
++ (id)sectionWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows;
+
 @end

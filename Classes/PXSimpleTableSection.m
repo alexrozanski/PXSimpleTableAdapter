@@ -17,6 +17,45 @@
 @synthesize rows = _rows;
 @synthesize adapter = _adapter;
 
+
++ (id)sectionWithRows:(NSArray*)rows
+{
+    return [self sectionWithSectionHeaderTitle:nil sectionFooterTitle:nil rows:rows];
+}
+
++ (id)sectionWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows
+{
+    return [[[self alloc] initWithSectionHeaderTitle:headerTitle sectionFooterTitle:footerTitle rows:rows] autorelease];
+}
+
+
+#pragma mark - Init/Dealloc
+
+- (id)initWithRows:(NSArray*)rows
+{
+    return [self initWithSectionHeaderTitle:nil sectionFooterTitle:nil rows:rows];
+}
+
+- (id)initWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows
+{
+    if((self = [super init])) {
+        _rows = [rows mutableCopy];
+        _sectionHeaderTitle = [headerTitle copy];
+        _sectionFooterTitle = [footerTitle copy];
+    }
+    
+    return self;
+}
+
+- (void)dealloc
+{
+    [_rows release], _roww=nil;
+    [_sectionHeaderTitle release], _sectionHeaderTitle=nil;
+    [_sectionFooterTitle release], _sectionFooterTitle=nil;
+    
+    [super dealloc];
+}
+
 #pragma mark - Custom Accessors
 
 - (void)setRows:(NSArray*)rows
