@@ -43,6 +43,7 @@
 		D2D67E34133C9C820080953D /* PXSimpleTableSection+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PXSimpleTableSection+Private.h"; path = "Classes/PXSimpleTableSection+Private.h"; sourceTree = SOURCE_ROOT; };
 		D2D67E35133C9CEB0080953D /* PXSimpleTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableRow.h; path = Classes/PXSimpleTableRow.h; sourceTree = SOURCE_ROOT; };
 		D2D67E36133C9CEB0080953D /* PXSimpleTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableRow.m; path = Classes/PXSimpleTableRow.m; sourceTree = SOURCE_ROOT; };
+		D2D67E38133CA8CA0080953D /* PXSimpleTableAdapterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableAdapterDelegate.h; path = Classes/PXSimpleTableAdapterDelegate.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +93,7 @@
 			children = (
 				D2D67E25133C975C0080953D /* PXSimpleTableAdapter.h */,
 				D2D67E26133C975C0080953D /* PXSimpleTableAdapter.m */,
+				D2D67E38133CA8CA0080953D /* PXSimpleTableAdapterDelegate.h */,
 				D2D67E2E133C98C00080953D /* Model */,
 			);
 			path = PXSimpleTableAdapter;

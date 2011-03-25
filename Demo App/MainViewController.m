@@ -53,6 +53,7 @@
     //Set the table sections
     NSArray *sections = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
     self.tableAdapter.sections = sections;
+    
     [sections release];
 }
 
@@ -61,6 +62,13 @@
     [super viewDidUnload];
     
     self.tableAdapter = nil;
+}
+
+#pragma mark - Table Adapter
+
+- (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section
+{
+    NSLog(@"selected");
 }
 
 @end

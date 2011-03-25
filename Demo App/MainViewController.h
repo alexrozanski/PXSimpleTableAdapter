@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@class PXSimpleTableAdapter;
+#import "PXSimpleTableAdapter.h"
 
 
-@interface MainViewController : UIViewController {
+@interface MainViewController : UIViewController <PXSimpleTableAdapterDelegate> {
     PXSimpleTableAdapter *tableAdapter;
 }
 

@@ -14,6 +14,9 @@
 @synthesize tableView;
 @synthesize sections = _sections;
 
+@synthesize target;
+@synthesize action;
+
 #pragma mark - Init/Dealloc
 
 - (id)init
@@ -30,6 +33,22 @@
     [_sections release], _sections=nil;
     
     [super dealloc];
+}
+
+#pragma mark - Data Handling
+
+- (void)addSection:(PXSimpleTableSection*)section
+{
+    [_sections addObject:section];
+    
+    [self.tableView reloadData];
+}
+
+- (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section
+{
+    [(NSMutableArray*)section.rows addObject:row];
+    
+    [self.tableView reloadData];
 }
 
 #pragma mark - Custom Accessors
@@ -99,6 +118,16 @@
     PXSimpleTableSection *theSection = [self.sections objectAtIndex:section];
     
     return theSection.sectionFooterTitle;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if([self.delegate conformsToProtocol:@protocol(PXSimpleTableAdapterDelegate)]) {
+        PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
+        PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
+        
+        [self.delegate simpleTableAdapter:self didSelectRow:row inSection:section];
+    }
 }
 
 @end
