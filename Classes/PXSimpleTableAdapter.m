@@ -12,6 +12,7 @@
 @implementation PXSimpleTableAdapter
 
 @synthesize tableView;
+@synthesize sections = _sections;
 
 #pragma mark - Init/Dealloc
 
