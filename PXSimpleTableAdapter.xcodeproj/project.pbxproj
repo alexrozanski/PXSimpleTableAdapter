@@ -1,0 +1,312 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D27E87B3133C928A00D23593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B2133C928A00D23593 /* UIKit.framework */; };
+		D27E87B5133C928A00D23593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B4133C928A00D23593 /* Foundation.framework */; };
+		D27E87B7133C928A00D23593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B6133C928A00D23593 /* CoreGraphics.framework */; };
+		D2D67E15133C946F0080953D /* SimpleTableDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */; };
+		D2D67E19133C94780080953D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E16133C94780080953D /* main.m */; };
+		D2D67E1D133C94810080953D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E1B133C94810080953D /* InfoPlist.strings */; };
+		D2D67E20133C948B0080953D /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E1E133C948B0080953D /* MainWindow.xib */; };
+		D2D67E27133C975C0080953D /* PXSimpleTableAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E26133C975C0080953D /* PXSimpleTableAdapter.m */; };
+		D2D67E2A133C98B00080953D /* PXSimpleTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E29133C98B00080953D /* PXSimpleTableSection.m */; };
+		D2D67E2D133C98BC0080953D /* PXSimpleTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E2C133C98BC0080953D /* PXSimpleTableRow.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		D27E87AE133C928A00D23593 /* PXSimpleTableAdapter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PXSimpleTableAdapter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		D27E87B2133C928A00D23593 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		D27E87B4133C928A00D23593 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		D27E87B6133C928A00D23593 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D2D67E13133C946F0080953D /* SimpleTableDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleTableDemoAppDelegate.h; path = "Demo App/SimpleTableDemoAppDelegate.h"; sourceTree = SOURCE_ROOT; };
+		D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTableDemoAppDelegate.m; path = "Demo App/SimpleTableDemoAppDelegate.m"; sourceTree = SOURCE_ROOT; };
+		D2D67E16133C94780080953D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Demo App/main.m"; sourceTree = SOURCE_ROOT; };
+		D2D67E17133C94780080953D /* PXSimpleTableAdapter-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "PXSimpleTableAdapter-Info.plist"; path = "Demo App/PXSimpleTableAdapter-Info.plist"; sourceTree = SOURCE_ROOT; };
+		D2D67E18133C94780080953D /* PXSimpleTableAdapter-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PXSimpleTableAdapter-Prefix.pch"; path = "Demo App/PXSimpleTableAdapter-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		D2D67E1C133C94810080953D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = "Demo App/en.lproj/InfoPlist.strings"; sourceTree = SOURCE_ROOT; };
+		D2D67E1F133C948B0080953D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = "Demo App/en.lproj/MainWindow.xib"; sourceTree = SOURCE_ROOT; };
+		D2D67E25133C975C0080953D /* PXSimpleTableAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableAdapter.h; path = Classes/PXSimpleTableAdapter.h; sourceTree = SOURCE_ROOT; };
+		D2D67E26133C975C0080953D /* PXSimpleTableAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableAdapter.m; path = Classes/PXSimpleTableAdapter.m; sourceTree = SOURCE_ROOT; };
+		D2D67E28133C98B00080953D /* PXSimpleTableSection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableSection.h; path = Classes/PXSimpleTableSection.h; sourceTree = SOURCE_ROOT; };
+		D2D67E29133C98B00080953D /* PXSimpleTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableSection.m; path = Classes/PXSimpleTableSection.m; sourceTree = SOURCE_ROOT; };
+		D2D67E2B133C98BC0080953D /* PXSimpleTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableRow.h; path = PXSimpleTableAdapter.xcodeproj/PXSimpleTableRow.h; sourceTree = SOURCE_ROOT; };
+		D2D67E2C133C98BC0080953D /* PXSimpleTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableRow.m; path = PXSimpleTableAdapter.xcodeproj/PXSimpleTableRow.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D27E87AB133C928900D23593 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D27E87B3133C928A00D23593 /* UIKit.framework in Frameworks */,
+				D27E87B5133C928A00D23593 /* Foundation.framework in Frameworks */,
+				D27E87B7133C928A00D23593 /* CoreGraphics.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D27E87A3133C928900D23593 = {
+			isa = PBXGroup;
+			children = (
+				D27E87B8133C928A00D23593 /* PXSimpleTableAdapter */,
+				D27E87CC133C929800D23593 /* Demo App */,
+				D27E87B1133C928A00D23593 /* Frameworks */,
+				D27E87AF133C928A00D23593 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D27E87AF133C928A00D23593 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D27E87AE133C928A00D23593 /* PXSimpleTableAdapter.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D27E87B1133C928A00D23593 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D27E87B2133C928A00D23593 /* UIKit.framework */,
+				D27E87B4133C928A00D23593 /* Foundation.framework */,
+				D27E87B6133C928A00D23593 /* CoreGraphics.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D27E87B8133C928A00D23593 /* PXSimpleTableAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				D2D67E25133C975C0080953D /* PXSimpleTableAdapter.h */,
+				D2D67E26133C975C0080953D /* PXSimpleTableAdapter.m */,
+				D2D67E2E133C98C00080953D /* Model */,
+			);
+			path = PXSimpleTableAdapter;
+			sourceTree = "<group>";
+		};
+		D27E87B9133C928A00D23593 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D2D67E16133C94780080953D /* main.m */,
+				D2D67E1B133C94810080953D /* InfoPlist.strings */,
+				D2D67E17133C94780080953D /* PXSimpleTableAdapter-Info.plist */,
+				D2D67E18133C94780080953D /* PXSimpleTableAdapter-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D27E87CC133C929800D23593 /* Demo App */ = {
+			isa = PBXGroup;
+			children = (
+				D2D67E13133C946F0080953D /* SimpleTableDemoAppDelegate.h */,
+				D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */,
+				D2D67E1E133C948B0080953D /* MainWindow.xib */,
+				D27E87D0133C93C300D23593 /* Main View */,
+				D27E87B9133C928A00D23593 /* Supporting Files */,
+			);
+			name = "Demo App";
+			path = PXSimpleTableAdapter;
+			sourceTree = "<group>";
+		};
+		D27E87D0133C93C300D23593 /* Main View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Main View";
+			sourceTree = "<group>";
+		};
+		D2D67E2E133C98C00080953D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D2D67E28133C98B00080953D /* PXSimpleTableSection.h */,
+				D2D67E29133C98B00080953D /* PXSimpleTableSection.m */,
+				D2D67E2B133C98BC0080953D /* PXSimpleTableRow.h */,
+				D2D67E2C133C98BC0080953D /* PXSimpleTableRow.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		D27E87AD133C928900D23593 /* PXSimpleTableAdapter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D27E87C9133C928A00D23593 /* Build configuration list for PBXNativeTarget "PXSimpleTableAdapter" */;
+			buildPhases = (
+				D27E87AA133C928900D23593 /* Sources */,
+				D27E87AB133C928900D23593 /* Frameworks */,
+				D27E87AC133C928900D23593 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PXSimpleTableAdapter;
+			productName = PXSimpleTableAdapter;
+			productReference = D27E87AE133C928A00D23593 /* PXSimpleTableAdapter.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D27E87A5133C928900D23593 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "Alex Rozanski";
+			};
+			buildConfigurationList = D27E87A8133C928900D23593 /* Build configuration list for PBXProject "PXSimpleTableAdapter" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D27E87A3133C928900D23593;
+			productRefGroup = D27E87AF133C928A00D23593 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D27E87AD133C928900D23593 /* PXSimpleTableAdapter */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D27E87AC133C928900D23593 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D67E1D133C94810080953D /* InfoPlist.strings in Resources */,
+				D2D67E20133C948B0080953D /* MainWindow.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D27E87AA133C928900D23593 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2D67E15133C946F0080953D /* SimpleTableDemoAppDelegate.m in Sources */,
+				D2D67E19133C94780080953D /* main.m in Sources */,
+				D2D67E27133C975C0080953D /* PXSimpleTableAdapter.m in Sources */,
+				D2D67E2A133C98B00080953D /* PXSimpleTableSection.m in Sources */,
+				D2D67E2D133C98BC0080953D /* PXSimpleTableRow.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		D2D67E1B133C94810080953D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2D67E1C133C94810080953D /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		D2D67E1E133C948B0080953D /* MainWindow.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D2D67E1F133C948B0080953D /* en */,
+			);
+			name = MainWindow.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D27E87C7133C928A00D23593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		D27E87C8133C928A00D23593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_VERSION = com.apple.compilers.llvmgcc42;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
+				SDKROOT = iphoneos;
+			};
+			name = Release;
+		};
+		D27E87CA133C928A00D23593 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo App/PXSimpleTableAdapter-Prefix.pch";
+				INFOPLIST_FILE = "Demo App/PXSimpleTableAdapter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		D27E87CB133C928A00D23593 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Demo App/PXSimpleTableAdapter-Prefix.pch";
+				INFOPLIST_FILE = "Demo App/PXSimpleTableAdapter-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALIDATE_PRODUCT = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D27E87A8133C928900D23593 /* Build configuration list for PBXProject "PXSimpleTableAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27E87C7133C928A00D23593 /* Debug */,
+				D27E87C8133C928A00D23593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D27E87C9133C928A00D23593 /* Build configuration list for PBXNativeTarget "PXSimpleTableAdapter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D27E87CA133C928A00D23593 /* Debug */,
+				D27E87CB133C928A00D23593 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D27E87A5133C928900D23593 /* Project object */;
+}
