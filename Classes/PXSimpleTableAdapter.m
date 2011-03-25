@@ -68,6 +68,17 @@
 
 #pragma mark - Selection
 
+- (PXSimpleTableRow*)selectedRow
+{
+    NSIndexPath *selectedIndexPath = [self.tableView indexPathForSelectedRow];
+    
+    if(selectedIndexPath) {
+        return [[[self.sections objectAtIndex:selectedIndexPath.section] rows] objectAtIndex:selectedIndexPath.row];
+    }
+    
+    return nil;
+}
+
 - (void)deselectRow:(PXSimpleTableRow*)row
 {
     NSUInteger sectionIndex = [self.sections indexOfObject:row.section];

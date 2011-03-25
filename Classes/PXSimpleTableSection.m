@@ -12,6 +12,7 @@
 #import "PXSimpleTableRow.h"
 #import "PXSimpleTableRow+Private.h"
 
+
 @implementation PXSimpleTableSection
 
 @synthesize sectionHeaderTitle = _sectionHeaderTitle;

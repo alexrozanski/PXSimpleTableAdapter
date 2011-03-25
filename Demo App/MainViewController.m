@@ -30,27 +30,28 @@
 {
     [super viewDidLoad];
     
-    
     //Set up the first section
-    NSArray *firstSectionRows = [[NSArray alloc] initWithObjects:[PXSimpleTableRow rowWithTitle:@"First Row"],
-                                 [PXSimpleTableRow rowWithTitle:@"Another Row"],
-                                 [PXSimpleTableRow rowWithTitle:@"Other Row"], nil];
+    PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row"];
+    [firstRow setDisclosureRow:YES];
+    PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
+    [secondRow setDisclosureRow:YES];
+    PXSimpleTableRow *thirdRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
     
     PXSimpleTableSection *firstSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Header"
                                                                                sectionFooterTitle:nil
-                                                                                             rows:firstSectionRows];
-    [firstSectionRows release];
+                                                                                             rows:[NSArray arrayWithObjects:firstRow, secondRow, thirdRow, nil]];
     
     
     //Set up the second section
-    NSArray *secondSectionRows = [[NSArray alloc] initWithObjects:[PXSimpleTableRow rowWithTitle:@"A row"],
-                                  [PXSimpleTableRow rowWithTitle:@"Another row"],
-                                  [PXSimpleTableRow rowWithTitle:@"Other row"], nil];
+    PXSimpleTableRow *fourthRow = [PXSimpleTableRow rowWithTitle:@"A Row"];
+    PXSimpleTableRow *fifthRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
+    [fifthRow setDisclosureRow:YES];
+    PXSimpleTableRow *sixthRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
+    [sixthRow setDisclosureRow:YES];
     
     PXSimpleTableSection *secondSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Another header"
                                                                                 sectionFooterTitle:nil
-                                                                                              rows:secondSectionRows];
-    [secondSectionRows release];
+                                                                                              rows:[NSArray arrayWithObjects:fourthRow, fifthRow, sixthRow, nil]];
     
     //Set the table sections
     NSArray *sections = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
@@ -81,10 +82,12 @@
 
 - (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row
 {
-    self.otherViewController.navigationItem.title = row.title;
-    
-    [self.navigationController pushViewController:self.otherViewController animated:YES];
-    [adapter deselectRow:row];
+    if([row isDisclosureRow]) {
+        self.otherViewController.navigationItem.title = row.title;
+        
+        [self.navigationController pushViewController:self.otherViewController animated:YES];
+        [adapter deselectRow:row];
+    }
 }
 
 @end
