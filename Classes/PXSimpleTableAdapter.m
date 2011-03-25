@@ -44,6 +44,14 @@
     [newTableView setDataSource:self];
 }
 
+- (void)setSections:(NSArray*)newSections
+{
+    NSMutableArray *s = [newSections mutableCopy];
+    
+    [_sections release];
+    _sections = s;
+}
+
 #pragma mark - UITableView
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView

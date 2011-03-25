@@ -20,4 +20,6 @@
 
 @property (nonatomic, assign) IBOutlet UITableView *tableView;
 
+@property (nonatomic, retain) NSArray *sections;
+
 @end
