@@ -16,6 +16,6 @@
     NSMutableArray *_sections;
 }
 
-@property (nonatomic, assign) UITableView *tableView;
+@property (nonatomic, assign) IBOutlet UITableView *tableView;
 
 @end
