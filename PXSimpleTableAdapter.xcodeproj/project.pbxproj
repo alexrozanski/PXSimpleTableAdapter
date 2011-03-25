@@ -17,6 +17,8 @@
 		D2D67E27133C975C0080953D /* PXSimpleTableAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E26133C975C0080953D /* PXSimpleTableAdapter.m */; };
 		D2D67E2A133C98B00080953D /* PXSimpleTableSection.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E29133C98B00080953D /* PXSimpleTableSection.m */; };
 		D2D67E2D133C98BC0080953D /* PXSimpleTableRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E2C133C98BC0080953D /* PXSimpleTableRow.m */; };
+		D2D67E32133C99B40080953D /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E30133C99B40080953D /* MainViewController.m */; };
+		D2D67E33133C99B40080953D /* MainView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E31133C99B40080953D /* MainView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +39,9 @@
 		D2D67E29133C98B00080953D /* PXSimpleTableSection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableSection.m; path = Classes/PXSimpleTableSection.m; sourceTree = SOURCE_ROOT; };
 		D2D67E2B133C98BC0080953D /* PXSimpleTableRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PXSimpleTableRow.h; path = PXSimpleTableAdapter.xcodeproj/PXSimpleTableRow.h; sourceTree = SOURCE_ROOT; };
 		D2D67E2C133C98BC0080953D /* PXSimpleTableRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PXSimpleTableRow.m; path = PXSimpleTableAdapter.xcodeproj/PXSimpleTableRow.m; sourceTree = SOURCE_ROOT; };
+		D2D67E2F133C99B40080953D /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = "Demo App/MainViewController.h"; sourceTree = SOURCE_ROOT; };
+		D2D67E30133C99B40080953D /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = "Demo App/MainViewController.m"; sourceTree = SOURCE_ROOT; };
+		D2D67E31133C99B40080953D /* MainView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = MainView.xib; path = "Demo App/MainView.xib"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +123,9 @@
 		D27E87D0133C93C300D23593 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
+				D2D67E2F133C99B40080953D /* MainViewController.h */,
+				D2D67E30133C99B40080953D /* MainViewController.m */,
+				D2D67E31133C99B40080953D /* MainView.xib */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			files = (
 				D2D67E1D133C94810080953D /* InfoPlist.strings in Resources */,
 				D2D67E20133C948B0080953D /* MainWindow.xib in Resources */,
+				D2D67E33133C99B40080953D /* MainView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -200,6 +209,7 @@
 				D2D67E27133C975C0080953D /* PXSimpleTableAdapter.m in Sources */,
 				D2D67E2A133C98B00080953D /* PXSimpleTableSection.m in Sources */,
 				D2D67E2D133C98BC0080953D /* PXSimpleTableRow.m in Sources */,
+				D2D67E32133C99B40080953D /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
