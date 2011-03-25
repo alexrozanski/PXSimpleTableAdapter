@@ -79,12 +79,12 @@
 
 #pragma mark - Table Adapter
 
-- (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section
+- (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row
 {
     self.otherViewController.navigationItem.title = row.title;
     
     [self.navigationController pushViewController:self.otherViewController animated:YES];
-    [adapter deselectRow:row inSection:section];
+    [adapter deselectRow:row];
 }
 
 @end

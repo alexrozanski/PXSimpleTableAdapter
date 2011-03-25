@@ -8,12 +8,12 @@
 
 #import "PXSimpleTableAdapter.h"
 
+#import "PXSimpleTableSection+Private.h"
 
 @implementation PXSimpleTableAdapter
 
 @synthesize tableView;
 @synthesize sections = _sections;
-@synthesize rowShouldDeselectWhenSelected = _rowShouldDeselectWhenSelected;
 @synthesize delegate = _delegate;
 
 #pragma mark - Init/Dealloc
@@ -39,6 +39,7 @@
 - (void)addSection:(PXSimpleTableSection*)section
 {
     [_sections addObject:section];
+    [section setAdapter:self];
     
     [self.tableView reloadData];
 }
@@ -50,33 +51,58 @@
     [self.tableView reloadData];
 }
 
-- (void)deselectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section
+- (void)deselectRow:(PXSimpleTableRow*)row
 {
-    NSUInteger sectionIndex = [self.sections indexOfObject:section];
-    NSUInteger rowIndex = [section.rows indexOfObject:row];
+    NSUInteger sectionIndex = [self.sections indexOfObject:row.section];
+    NSUInteger rowIndex = [row.section.rows indexOfObject:row];
     
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
+}
+
+- (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath
+{
+    return [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
+}
+
+- (NSInteger)indexOfSection:(PXSimpleTableSection*)section
+{
+    return [self.sections indexOfObject:section];
+}
+
+- (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row
+{
+    return [row.section.rows indexOfObject:row];
 }
 
 #pragma mark - Custom Accessors
 
 - (void)setTableView:(UITableView*)newTableView
 {
-    [tableView setDelegate:nil];
-    [tableView setDataSource:nil];
+    tableView.delegate = nil;
+    tableView.dataSource = nil;
     
     tableView = newTableView;
     
-    [newTableView setDelegate:self];
-    [newTableView setDataSource:self];
+    tableView.delegate = self;
+    tableView.dataSource = self;
 }
 
 - (void)setSections:(NSArray*)newSections
 {
     NSMutableArray *s = [newSections mutableCopy];
+
+    //Untag ourselves from the sections
+    for(PXSimpleTableSection *theSection in _sections) {
+        theSection.adapter=nil;
+    }
     
     [_sections release];
     _sections = s;
+    
+    //Tag ourselves to the new sections
+    for(PXSimpleTableSection *theSection in _sections) {
+        theSection.adapter=self;
+    }
     
     [self.tableView reloadData];
 }
@@ -137,11 +163,11 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:inSection:)]) {
+    if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:)]) {
         PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
         PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
         
-        [self.delegate simpleTableAdapter:self didSelectRow:row inSection:section];
+        [self.delegate simpleTableAdapter:self didSelectRow:row];
     }
 }
 

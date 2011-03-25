@@ -7,6 +7,7 @@
 //
 
 #import "PXSimpleTableRow.h"
+#import "PXSimpleTableRow+Private.h"
 
 
 @implementation PXSimpleTableRow
@@ -14,6 +15,7 @@
 @synthesize title = _title;
 @synthesize icon = _icon;
 @synthesize disclosureRow = _disclosureRow;
+@synthesize section = _section;
 
 + (id)rowWithTitle:(NSString*)title
 {

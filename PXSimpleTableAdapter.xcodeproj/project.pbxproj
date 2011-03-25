@@ -51,6 +51,7 @@
 		D2D67E3A133CAB350080953D /* OtherViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = OtherViewController.m; path = "Demo App/OtherViewController.m"; sourceTree = SOURCE_ROOT; };
 		D2D67E3B133CAB360080953D /* OtherView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OtherView.xib; path = "Demo App/OtherView.xib"; sourceTree = SOURCE_ROOT; };
 		D2D67E3F133CB2150080953D /* README.markdown */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.markdown; sourceTree = SOURCE_ROOT; };
+		D2D67E41133CB3CE0080953D /* PXSimpleTableRow+Private.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "PXSimpleTableRow+Private.h"; path = "Classes/PXSimpleTableRow+Private.h"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,6 +151,7 @@
 				D2D67E34133C9C820080953D /* PXSimpleTableSection+Private.h */,
 				D2D67E35133C9CEB0080953D /* PXSimpleTableRow.h */,
 				D2D67E36133C9CEB0080953D /* PXSimpleTableRow.m */,
+				D2D67E41133CB3CE0080953D /* PXSimpleTableRow+Private.h */,
 			);
 			name = Model;
 			sourceTree = "<group>";

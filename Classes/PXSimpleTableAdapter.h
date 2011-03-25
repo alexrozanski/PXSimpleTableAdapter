@@ -28,6 +28,10 @@
 - (void)addSection:(PXSimpleTableSection*)section;
 - (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section;
 
-- (void)deselectRow:(PXSimpleTableRow*)row inSection:(PXSimpleTableSection*)section;
+- (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath;
+- (NSInteger)indexOfSection:(PXSimpleTableSection*)section;
+- (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row;
+
+- (void)deselectRow:(PXSimpleTableRow*)row;
 
 @end

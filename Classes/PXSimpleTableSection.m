@@ -8,7 +8,8 @@
 
 #import "PXSimpleTableSection.h"
 
-
+#import "PXSimpleTableRow.h"
+#import "PXSimpleTableRow+Private.h"
 
 @implementation PXSimpleTableSection
 
@@ -16,7 +17,6 @@
 @synthesize sectionFooterTitle = _sectionFooterTitle;
 @synthesize rows = _rows;
 @synthesize adapter = _adapter;
-
 
 + (id)sectionWithRows:(NSArray*)rows
 {
@@ -39,7 +39,7 @@
 - (id)initWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows
 {
     if((self = [super init])) {
-        _rows = [rows mutableCopy];
+        self.rows = rows;
         _sectionHeaderTitle = [headerTitle copy];
         _sectionFooterTitle = [footerTitle copy];
     }
@@ -62,8 +62,19 @@
 {
     NSMutableArray *newRows = [rows mutableCopy];
     
+    //Untag ourselves from the old rows
+    for(PXSimpleTableRow *theRow in _rows) {
+        theRow.section = nil;
+    }
+    
     [rows release];
     _rows = newRows;
+    
+    //Tag ourselves to the new rows
+    for(PXSimpleTableRow *theRow in _rows) {
+        theRow.section = self;
+    }
+    
 }
 
 @end

@@ -9,7 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
+@class PXSimpleTableSection;
+
 @interface PXSimpleTableRow : NSObject {
+    PXSimpleTableSection *_section;
+    
     NSString *_title;
     UIImage *_icon;
     
@@ -19,6 +23,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, assign, getter=isDisclosureRow) BOOL disclosureRow;
+
+@property (nonatomic, readonly) PXSimpleTableSection *section;
 
 + (id)rowWithTitle:(NSString*)title;
 + (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon;
