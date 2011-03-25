@@ -7,6 +7,7 @@
 //
 
 #import "PXSimpleTableSection.h"
+#import "PXSimpleTableSection+Private.h"
 
 #import "PXSimpleTableRow.h"
 #import "PXSimpleTableRow+Private.h"
@@ -39,7 +40,13 @@
 - (id)initWithSectionHeaderTitle:(NSString*)headerTitle sectionFooterTitle:(NSString*)footerTitle rows:(NSArray*)rows
 {
     if((self = [super init])) {
-        self.rows = rows;
+        _rows = [rows mutableCopy];
+        
+        //Tag ourselves to the new sections
+        for(PXSimpleTableRow *theRow in _rows) {
+            theRow.section = self;
+        }
+        
         _sectionHeaderTitle = [headerTitle copy];
         _sectionFooterTitle = [footerTitle copy];
     }

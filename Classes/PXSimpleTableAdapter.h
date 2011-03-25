@@ -20,16 +20,16 @@
     NSMutableArray *_sections;
 }
 
+@property (nonatomic, assign) IBOutlet id<PXSimpleTableAdapterDelegate> delegate;
 @property (nonatomic, assign) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *sections;
 
-@property (nonatomic, assign) IBOutlet id<PXSimpleTableAdapterDelegate> delegate;
 
 - (void)addSection:(PXSimpleTableSection*)section;
 - (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section;
 
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath;
-- (NSInteger)indexOfSection:(PXSimpleTableSection*)section;
+- (NSInteger)indexOfSectionInTable:(PXSimpleTableSection*)section;
 - (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row;
 
 - (void)deselectRow:(PXSimpleTableRow*)row;

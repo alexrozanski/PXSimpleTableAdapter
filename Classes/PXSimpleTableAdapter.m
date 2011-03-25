@@ -56,7 +56,7 @@
     return [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
 }
 
-- (NSInteger)indexOfSection:(PXSimpleTableSection*)section
+- (NSInteger)indexOfSectionInTable:(PXSimpleTableSection*)section
 {
     return [self.sections indexOfObject:section];
 }
