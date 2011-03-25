@@ -7,6 +7,7 @@
 //
 
 #import "SimpleTableDemoAppDelegate.h"
+#import "MainViewController.h"
 
 @implementation SimpleTableDemoAppDelegate
 
@@ -15,6 +16,11 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     [self.window makeKeyAndVisible];
+    
+    //Add the main view
+    MainViewController *controller = [[MainViewController alloc] initWithNibName:@"MainView" bundle:nil];
+    self.window.rootViewController = controller;
+    [controller release];
     
     return YES;
 }
