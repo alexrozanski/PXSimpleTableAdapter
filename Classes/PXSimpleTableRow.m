@@ -14,4 +14,31 @@
 @synthesize title = _title;
 @synthesize icon = _icon;
 
++ (id)rowWithTitle:(NSString*)title
+{
+    return [self rowWithTitle:title icon:nil];
+}
+
++ (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon
+{
+    return [[[self alloc] initWithTitle:title icon:icon] autorelease];
+}
+
+#pragma mark - Init/Dealloc
+
+- (id)initWithTitle:(NSString*)title
+{
+    return [self initWithTitle:title icon:nil];
+}
+
+- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon
+{
+    if((self = [super init])) {
+        _title = [title copy];
+        _icon = [icon retain];
+    }
+    
+    return self;
+}
+
 @end
