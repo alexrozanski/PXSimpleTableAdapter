@@ -9,9 +9,13 @@
 #import "PXSimpleTableSection.h"
 
 
+
 @implementation PXSimpleTableSection
 
+@synthesize sectionHeaderTitle = _sectionHeaderTitle;
+@synthesize sectionFooterTitle = _sectionFooterTitle;
 @synthesize rows = _rows;
+@synthesize adapter = _adapter;
 
 #pragma mark - Custom Accessors
 

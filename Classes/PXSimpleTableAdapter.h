@@ -7,8 +7,10 @@
 //
 
 
-#import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
+
+#import "PXSimpleTableSection.h"
+#import "PXSimpleTableRow.h"
 
 @interface PXSimpleTableAdapter : NSObject <UITableViewDelegate, UITableViewDataSource> {
     UITableView *tableView;
