@@ -16,6 +16,13 @@ The project uses three main classes:
 
 Although excellent for dynamic content, setting up a table view with static, pre-defined content can be tricky and rather verbose. Although I love [Fraser Speirs' technique](http://speirs.org/blog/2008/10/11/a-technique-for-using-uitableview-and-retaining-your-sanity.html) of using enumerations, using objects feels like a much cleaner method and not having to implement the `UITableViewDataSource` methods reduces code required.
 
+What PXSimpleTableAdapter is not
+--------------------------------
+
+`PXSimpleTableAdapter` is primarily a convenience for menu-like interfaces which happen to use a table view (such as Settings.app) where implementing all the `UITableView`(`Delegate`|`DataSource`) methods is long winded (especially if you have multiple levels of these views.
+
+However, `PXSimpleTableAdapter` is *not* a replacement for `UITableView` and its associated delegate/data source methods. The delegation pattern works much better when displaying dynamic content.
+
 
 Using PXSimpleTableAdapter
 --------------------------
@@ -28,12 +35,33 @@ Using PXSimpleTableAdapter
 
 The project includes a demo application to see how the control can be used in more detail.
 
-What PXSimpleTableAdapter is not
---------------------------------
+Property List integration
+-------------------------
 
-`PXSimpleTableAdapter` is primarily a convenience for menu-like interfaces which happen to use a table view (such as Settings.app) where implementing all the `UITableView`(`Delegate`|`DataSource`) methods is long winded (especially if you have multiple levels of these views.
+`PXSimpleTableAdapter` can be set up programatically by creating arrays of Sections and Rows, or by passing in a property list, which simplifies the process.
 
-However, `PXSimpleTableAdapter` is *not* a replacement for `UITableView` and its associated delegate/data source methods. The delegation pattern works much better when displaying dynamic content.
+The structure of a valid plist is as follows:
+
+    <Section Array>: (
+        <Single Section Dictionary>: {
+            headerTitle = "Header title";
+            footerTitle = "Footer title";
+            rows = <Rows Array>: (
+                <Single Row Dictionary>: {
+                    title = "Row title";
+                    iconName = "NameOfIconFileInBundle";
+                },
+
+                ...
+            );
+        },
+        
+        ...
+    )
+
+This can then be loaded in and set up by calling `-[PXSimpleTableAdapter setUpTableFromPropertyList:]`. An example of the plist and plist loading can be found in the Demo App in the repository.
+
+The sections array can optionally be wrapped in a dictionary, which would then be the root item in the property list. When `PXSimpleTableAdapter` looks for the sections array, if it is enclosed in a dictionary, the first array will be used as the sections array.
 
 Example code
 ------------
