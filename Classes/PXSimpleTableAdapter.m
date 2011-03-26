@@ -177,10 +177,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
+	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
+	
+	row.selectionBlock(row);
+	
     if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:)]) {
-        PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
-        PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
-        
         [self.delegate simpleTableAdapter:self didSelectRow:row];
     }
 }
