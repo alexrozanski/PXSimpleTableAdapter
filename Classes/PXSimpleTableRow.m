@@ -16,29 +16,41 @@
 @synthesize icon = _icon;
 @synthesize disclosureRow = _disclosureRow;
 @synthesize section = _section;
+@synthesize selectionBlock = _selectionBlock;
 
 + (id)rowWithTitle:(NSString*)title
 {
-    return [self rowWithTitle:title icon:nil];
+    return [self rowWithTitle:title icon:nil selectionBlock:nil];
 }
 
 + (id)rowWithTitle:(NSString *)title icon:(UIImage*)icon
 {
-    return [[[self alloc] initWithTitle:title icon:icon] autorelease];
+    return [[[self alloc] initWithTitle:title icon:icon selectionBlock:nil] autorelease];
+}
+
++ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
+{
+	return [[[self alloc] initWithTitle:title icon:icon selectionBlock:selectionBlock] autorelease];
 }
 
 #pragma mark - Init/Dealloc
 
 - (id)initWithTitle:(NSString*)title
 {
-    return [self initWithTitle:title icon:nil];
+	return [self initWithTitle:title icon:nil selectionBlock:nil];
 }
 
-- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon
+- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon 
+{
+	return [self initWithTitle:title icon:icon selectionBlock:nil];
+}
+
+- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
 {
     if((self = [super init])) {
         _title = [title copy];
         _icon = [icon retain];
+		_selectionBlock = [selectionBlock copy];
     }
     
     return self;
@@ -48,7 +60,8 @@
 {
     [_title release], _title=nil;
     [_icon release], _icon=nil;
-    
+    [_selectionBlock release], _selectionBlock = nil;
+	
     [super dealloc];
 }
 
