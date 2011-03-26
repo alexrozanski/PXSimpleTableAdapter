@@ -23,6 +23,8 @@
 @property (nonatomic, copy) NSString *sectionFooterTitle;
 @property (nonatomic, retain) NSArray *rows;
 
+@property (nonatomic, readonly) NSUInteger index;
+
 @property (nonatomic, readonly) PXSimpleTableAdapter *adapter;
 
 + (id)sectionWithRows:(NSArray*)rows;

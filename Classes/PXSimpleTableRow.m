@@ -8,7 +8,7 @@
 
 #import "PXSimpleTableRow.h"
 #import "PXSimpleTableRow+Private.h"
-
+#import "PXSimpleTableAdapter.h"
 
 @implementation PXSimpleTableRow
 
@@ -66,6 +66,35 @@
 	[_accessoryTappedBlock release], _accessoryTappedBlock = nil;
 	
     [super dealloc];
+}
+
+#pragma mark - Setters
+
+- (void)setIcon:(UIImage *)icon {
+	
+	id old = _icon;
+	_icon = [icon retain];
+	[old release];
+	
+	[self.section.adapter.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPath] 
+										  withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)setTitle:(NSString *)title {
+	
+	id old = _title;
+	_title = [title retain];
+	[old release];
+	
+	[self.section.adapter.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPath] 
+										  withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - Getters
+
+- (NSIndexPath *)indexPath {
+	NSUInteger rowIndex = [self.section.rows indexOfObject:self];
+	return [NSIndexPath indexPathForRow:rowIndex inSection:self.section.index];
 }
 
 @end

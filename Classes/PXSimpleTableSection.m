@@ -12,6 +12,8 @@
 #import "PXSimpleTableRow.h"
 #import "PXSimpleTableRow+Private.h"
 
+#import "PXSimpleTableAdapter.h"
+
 
 @implementation PXSimpleTableSection
 
@@ -83,6 +85,10 @@
         theRow.section = self;
     }
     
+}
+
+- (NSUInteger)index {
+	return [self.adapter.sections indexOfObject:self];
 }
 
 @end

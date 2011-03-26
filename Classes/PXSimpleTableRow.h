@@ -29,6 +29,7 @@ typedef void (^PXSimpleTableRowSelectionBlock) (PXSimpleTableRow *row);
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 
 @property (nonatomic, readonly) PXSimpleTableSection *section;
+@property (nonatomic, readonly) NSIndexPath *indexPath;
 
 + (id)rowWithTitle:(NSString*)title;
 + (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon;
