@@ -11,7 +11,7 @@
 @class PXSimpleTableAdapter, PXSimpleTableRow, PXSimpleTableSection;
 
 @protocol PXSimpleTableAdapterDelegate <NSObject>
-
+@optional
 - (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter didSelectRow:(PXSimpleTableRow*)row;
-
+- (void)simpleTableAdapter:(PXSimpleTableAdapter*)adapter accessoryButtonTappedForRow:(PXSimpleTableRow*)row;
 @end

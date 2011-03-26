@@ -18,6 +18,7 @@
 @synthesize accessoryType = _accessoryType;
 @synthesize section = _section;
 @synthesize selectionBlock = _selectionBlock;
+@synthesize accessoryTappedBlock = _accessoryTappedBlock;
 
 + (id)rowWithTitle:(NSString*)title
 {
@@ -63,6 +64,7 @@
     [_title release], _title=nil;
     [_icon release], _icon=nil;
     [_selectionBlock release], _selectionBlock = nil;
+	[_accessoryTappedBlock release], _accessoryTappedBlock = nil;
 	
     [super dealloc];
 }

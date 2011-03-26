@@ -182,4 +182,17 @@
     }
 }
 
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	
+	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
+	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
+	
+	PXSimpleTableRowSelectionBlock accessoryTappedBlock = row.accessoryTappedBlock;
+	if ((accessoryTappedBlock)) accessoryTappedBlock(row);
+	
+	if([self.delegate respondsToSelector:@selector(simpleTableAdapter:accessoryButtonTappedForRow:)]) {
+        [self.delegate simpleTableAdapter:self accessoryButtonTappedForRow:row];
+	}
+}
+
 @end

@@ -18,7 +18,7 @@ typedef void (^PXSimpleTableRowSelectionBlock) (PXSimpleTableRow *row);
     
     NSString *_title;
     UIImage *_icon;
-    PXSimpleTableRowSelectionBlock _selectionBlock;
+    PXSimpleTableRowSelectionBlock _selectionBlock, _accessoryTappedBlock;
     BOOL _disclosureRow;
 	UITableViewCellAccessoryType _accessoryType;
 }
@@ -26,6 +26,7 @@ typedef void (^PXSimpleTableRowSelectionBlock) (PXSimpleTableRow *row);
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, copy) PXSimpleTableRowSelectionBlock selectionBlock;
+@property (nonatomic, copy) PXSimpleTableRowSelectionBlock accessoryTappedBlock;
 @property (nonatomic, assign, getter=isDisclosureRow) BOOL disclosureRow;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 
