@@ -14,7 +14,6 @@
 
 @synthesize title = _title;
 @synthesize icon = _icon;
-@synthesize disclosureRow = _disclosureRow;
 @synthesize accessoryType = _accessoryType;
 @synthesize section = _section;
 @synthesize selectionBlock = _selectionBlock;
