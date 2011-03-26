@@ -46,9 +46,7 @@ Although there is a demo project in the repository, here is a quick example of s
     PXSimpleTableSection *section1 = [[PXSimpleTableSection alloc] initWithRows:[NSArray arrayWithObjects:firstRow, secondRow, nil]];
     PXSimpleTableSection *section2 = ...
 
-    [<#tableAdapter#> setSections:[NSArray arrayWithObjects:section1, section2, nil]];
-
-<small>*if you're crazy</small>
+    [<#table adapter#> setSections:[NSArray arrayWithObjects:section1, section2, nil]];
 
 License
 =======
