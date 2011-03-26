@@ -35,6 +35,21 @@ Using PXSimpleTableAdapter
 
 The project includes a demo application to see how the control can be used in more detail.
 
+Example code
+------------
+
+Although there is a demo project in the repository, here is a quick example of setting up some data to be displayed in the table:
+
+PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row" icon:[UIImage imageNamed@"myImage"]];
+PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Second Row" icon:[UIImage imageNamed@"anotherImage"]];
+
+PXSimpleTableSection *section1 = [[PXSimpleTableSection alloc] initWithRows:[NSArray arrayWithObjects:firstRow, secondRow, nil]];
+PXSimpleTableSection *section2 = ...
+
+[<#table adapter#> setSections:[NSArray arrayWithObjects:section1, section2, nil]];
+[section1 release];
+[section2 release];
+
 Property List integration
 -------------------------
 
@@ -62,19 +77,6 @@ The structure of a valid plist is as follows:
 This can then be loaded in and set up by calling `-[PXSimpleTableAdapter setUpTableFromPropertyList:]`. An example of the plist and plist loading can be found in the Demo App in the repository.
 
 The sections array can optionally be wrapped in a dictionary, which would then be the root item in the property list. When `PXSimpleTableAdapter` looks for the sections array, if it is enclosed in a dictionary, the first array will be used as the sections array.
-
-Example code
-------------
-
-Although there is a demo project in the repository, here is a quick example of setting up some data to be displayed in the table:
-    
-    PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row" icon:[UIImage imageNamed@"myImage"]];
-    PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Second Row" icon:[UIImage imageNamed@"anotherImage"]];
-
-    PXSimpleTableSection *section1 = [[PXSimpleTableSection alloc] initWithRows:[NSArray arrayWithObjects:firstRow, secondRow, nil]];
-    PXSimpleTableSection *section2 = ...
-
-    [<#table adapter#> setSections:[NSArray arrayWithObjects:section1, section2, nil]];
 
 License
 =======
