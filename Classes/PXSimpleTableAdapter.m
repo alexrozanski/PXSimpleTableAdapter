@@ -180,8 +180,10 @@
 	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
 	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
 	
-	PXSimpleTableRowSelectionBlock selectionBlock = row.selectionBlock;
-	if ((selectionBlock)) selectionBlock(row);
+	PXSimpleTableRowSelectionHandler selectionHandler = row.selectionHandler;
+	if(selectionHandler) { 
+        selectionHandler(row);
+    }
 	
     if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:)]) {
         [self.delegate simpleTableAdapter:self didSelectRow:row];
