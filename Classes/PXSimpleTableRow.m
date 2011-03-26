@@ -15,6 +15,7 @@
 @synthesize title = _title;
 @synthesize icon = _icon;
 @synthesize disclosureRow = _disclosureRow;
+@synthesize accessoryType = _accessoryType;
 @synthesize section = _section;
 @synthesize selectionBlock = _selectionBlock;
 
@@ -51,6 +52,7 @@
         _title = [title copy];
         _icon = [icon retain];
 		_selectionBlock = [selectionBlock copy];
+		_accessoryType = UITableViewCellAccessoryNone;
     }
     
     return self;

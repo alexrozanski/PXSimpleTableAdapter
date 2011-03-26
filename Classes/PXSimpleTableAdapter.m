@@ -150,13 +150,7 @@
     
     cell.textLabel.text = row.title;
     cell.imageView.image = row.icon;
-    
-    if([row isDisclosureRow]) {
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    else {
-        cell.accessoryType = UITableViewCellAccessoryNone;
-    }
+    cell.accessoryType = row.accessoryType;
     
     return cell;
 }
