@@ -28,7 +28,7 @@
     return [[[self alloc] initWithTitle:title icon:icon selectionBlock:nil] autorelease];
 }
 
-+ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectedBlock)selectionBlock
++ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
 {
 	return [[[self alloc] initWithTitle:title icon:icon selectionBlock:selectionBlock] autorelease];
 }
@@ -45,7 +45,7 @@
 	return [self initWithTitle:title icon:icon selectionBlock:nil];
 }
 
-- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon selectionBlock:(PXSimpleTableRowSelectedBlock)selectionBlock
+- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
 {
     if((self = [super init])) {
         _title = [title copy];
