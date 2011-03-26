@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D25DDA73133E9EAB0086783B /* SimpleTable.plist in Resources */ = {isa = PBXBuildFile; fileRef = D25DDA72133E9EAB0086783B /* SimpleTable.plist */; };
 		D27E87B3133C928A00D23593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B2133C928A00D23593 /* UIKit.framework */; };
 		D27E87B5133C928A00D23593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B4133C928A00D23593 /* Foundation.framework */; };
 		D27E87B7133C928A00D23593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B6133C928A00D23593 /* CoreGraphics.framework */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D25DDA72133E9EAB0086783B /* SimpleTable.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = SimpleTable.plist; path = "Demo App/SimpleTable.plist"; sourceTree = SOURCE_ROOT; };
 		D27E87AE133C928A00D23593 /* PXSimpleTableAdapter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PXSimpleTableAdapter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D27E87B2133C928A00D23593 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D27E87B4133C928A00D23593 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -122,6 +124,7 @@
 		D27E87CC133C929800D23593 /* Demo App */ = {
 			isa = PBXGroup;
 			children = (
+				D25DDA72133E9EAB0086783B /* SimpleTable.plist */,
 				D2D67E13133C946F0080953D /* SimpleTableDemoAppDelegate.h */,
 				D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */,
 				D2D67E1E133C948B0080953D /* MainWindow.xib */,
@@ -221,6 +224,7 @@
 				D2D67E33133C99B40080953D /* MainView.xib in Resources */,
 				D2D67E3D133CAB360080953D /* OtherView.xib in Resources */,
 				D2D67E40133CB2160080953D /* README.markdown in Resources */,
+				D25DDA73133E9EAB0086783B /* SimpleTable.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

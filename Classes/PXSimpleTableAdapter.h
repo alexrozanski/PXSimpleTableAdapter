@@ -24,6 +24,7 @@
 @property (nonatomic, assign) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *sections;
 
+- (BOOL)setUpTableFromPropertyList:(id)propertyList;
 
 - (void)addSection:(PXSimpleTableSection*)section;
 - (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section;

@@ -34,6 +34,84 @@
     [super dealloc];
 }
 
+#pragma mark - plist setup
+
+- (BOOL)setUpTableFromPropertyList:(id)propertyList
+{
+    if(![propertyList isKindOfClass:[NSDictionary class]]&&![propertyList isKindOfClass:[NSArray class]]) {
+        return NO;
+    }
+    
+    NSArray *sections = nil;
+    
+    //Work out where the section data starts
+    if([propertyList isKindOfClass:[NSArray class]]) {
+        sections = propertyList;
+    }
+    else {
+        //If we are using a dictionary take the first array that we can find
+        NSArray *objects = [propertyList allObjects];
+        
+        for(id object in objects) {
+            if([object isKindOfClass:[NSArray class]]) {
+                sections = object;
+                break;
+            }
+        }
+        
+        if(!sections) {
+            return NO;
+        }
+    }
+    
+    NSMutableArray *newSections = [[NSMutableArray alloc] init];
+    
+    //Loop through the sections
+    for(id section in sections) {
+        if([section isKindOfClass:[NSDictionary class]]) {
+            PXSimpleTableSection *newSection = [[PXSimpleTableSection alloc] initWithRows:nil];
+            
+            newSection.sectionHeaderTitle = [section objectForKey:@"headerTitle"];
+            newSection.sectionFooterTitle = [section objectForKey:@"footerTitle"];
+            
+            NSArray *sectionRows = [section objectForKey:@"rows"];
+            NSMutableArray *rows = [[NSMutableArray alloc] init];
+            
+            //Loop through the rows
+            for(id row in sectionRows) {
+                if([row isKindOfClass:[NSDictionary class]]) {
+                    PXSimpleTableRow *newRow = [[PXSimpleTableRow alloc] initWithTitle:[row objectForKey:@"title"]];
+                    
+                    //Set the icon if we have one
+                    NSString *iconName = [row objectForKey:@"iconName"];
+                    if(iconName) {
+                        newRow.icon = [UIImage imageNamed:iconName];
+                    }
+                    
+                    [rows addObject:newRow];
+                    [newRow release];
+                }
+                else {
+                    return NO;
+                }
+            }
+            
+            newSection.rows = rows;
+            [rows release];
+            
+            [newSections addObject:newSection];
+            [newSection release];
+        }
+        else {
+            return NO;
+        }
+    }
+    
+    self.sections = newSections;
+    
+    return YES;
+}
+
 #pragma mark - Data Handling
 
 - (void)addSection:(PXSimpleTableSection*)section

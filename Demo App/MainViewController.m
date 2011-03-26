@@ -30,6 +30,12 @@
 {
     [super viewDidLoad];
     
+    [self setUpTableProgramatically];
+    //[self setUpTableFromPlist];
+}
+
+- (void)setUpTableProgramatically
+{
     //Set up the first section
     PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row"];
     [firstRow setDisclosureRow:YES];
@@ -58,6 +64,14 @@
     self.tableAdapter.sections = sections;
     
     [sections release];
+}
+
+- (void)setUpTableFromPlist
+{
+    NSURL *plistURL = [[NSBundle mainBundle] URLForResource:@"SimpleTable" withExtension:@"plist"];
+    NSArray *plist = [NSArray arrayWithContentsOfURL:plistURL];
+    
+    [self.tableAdapter setUpTableFromPropertyList:plist];
 }
 
 - (void)viewDidUnload

@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+	<array>
+		<dict>
+			<key>headerTitle</key>
+			<string>Header</string>
+			<key>rows</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>First Row</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Another Row</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Other Row</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>headerTitle</key>
+			<string>Another header</string>
+			<key>rows</key>
+			<array>
+				<dict>
+					<key>title</key>
+					<string>A Row</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Another Row</string>
+				</dict>
+				<dict>
+					<key>title</key>
+					<string>Other Row</string>
+				</dict>
+			</array>
+		</dict>
+	</array>
 </plist>

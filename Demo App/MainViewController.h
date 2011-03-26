@@ -20,4 +20,7 @@
 @property (nonatomic, retain) IBOutlet PXSimpleTableAdapter *tableAdapter;
 @property (nonatomic, readonly) OtherViewController *otherViewController;
 
+- (void)setUpTableProgramatically;
+- (void)setUpTableFromPlist;
+
 @end
