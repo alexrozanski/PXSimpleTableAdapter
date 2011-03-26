@@ -75,7 +75,7 @@
         theRow.section = nil;
     }
     
-    [rows release];
+    [_rows release];
     _rows = newRows;
     
     //Tag ourselves to the new rows
