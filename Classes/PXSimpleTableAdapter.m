@@ -148,6 +148,11 @@
 	[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+- (PXSimpleTableSection*)sectionAtIndex:(NSUInteger)index
+{
+    return [self.sections objectAtIndex:index];
+}
+
 #pragma mark - Data Handling
 
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath
@@ -170,8 +175,8 @@
 
 - (void)deselectRow:(PXSimpleTableRow*)row
 {
-    NSUInteger sectionIndex = [self.sections indexOfObject:row.section];
-    NSUInteger rowIndex = [row.section.rows indexOfObject:row];
+    NSUInteger sectionIndex = row.indexPath.section;
+    NSUInteger rowIndex = [[row.section rows] indexOfObject:row];
     
     [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
 }
