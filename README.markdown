@@ -3,10 +3,37 @@ PXSimpleTableAdapter
 
 `PXSimpleTableAdapter` is a class for iOS which makes managing `UITableView`s easier.
 
-How the classes work
----------------------
+![Demo App](https://github.com/Perspx/PXSimpleTableAdapter/raw/gh-pages/Pages/DemoApp.png)
 
 `PXSimpleTableAdapter` is geared towards managing tables which have static or data which changes very infrequently, such as Settings.app, by wrapping rows and sections in Objective-C objects, to avoid having to use enumerations or dictionaries.
+
+This interface is created using the following code:
+
+    PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row"];
+    [firstRow setDisclosureRow:YES];
+    PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
+    [secondRow setDisclosureRow:YES];
+    PXSimpleTableRow *thirdRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
+
+    PXSimpleTableSection *firstSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Header" sectionFooterTitle:nil rows:[NSArray arrayWithObjects:firstRow, secondRow, thirdRow, nil]];
+
+
+    //Set up the second section
+    PXSimpleTableRow *fourthRow = [PXSimpleTableRow rowWithTitle:@"A Row"];
+    PXSimpleTableRow *fifthRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
+    [fifthRow setDisclosureRow:YES];
+    PXSimpleTableRow *sixthRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
+    [sixthRow setDisclosureRow:YES];
+
+    PXSimpleTableSection *secondSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Another header" sectionFooterTitle:nil rows:[NSArray arrayWithObjects:fourthRow, fifthRow, sixthRow, nil]];
+
+    //Set the table sections
+    NSArray *sections = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
+    self.tableAdapter.sections = sections;
+
+
+How the classes work
+---------------------
 
 The project uses three main classes:
 
