@@ -191,15 +191,14 @@
 
 - (void)setSections:(NSArray*)newSections
 {
-    NSMutableArray *s = [newSections mutableCopy];
-
     //Untag ourselves from the sections
     for(PXSimpleTableSection *theSection in _sections) {
         theSection.adapter=nil;
     }
     
-    [_sections release];
-    _sections = s;
+	id old = _sections;
+    _sections = [newSections mutableCopy];
+	[old release];
     
     //Tag ourselves to the new sections
     for(PXSimpleTableSection *theSection in _sections) {
@@ -207,6 +206,11 @@
     }
     
     [self.tableView reloadData];
+}
+
+- (NSArray *)sections 
+{
+	return [[_sections copy] autorelease];
 }
 
 #pragma mark - UITableView
