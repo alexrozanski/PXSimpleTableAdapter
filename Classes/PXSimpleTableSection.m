@@ -113,9 +113,9 @@
 	[self.adapter.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:UITableViewRowAnimationFade];
 }
 
-/*- (NSArray *)rows {
+- (NSArray *)rows {
 	return [[_rows copy] autorelease];
-}*/
+}
 
 - (NSUInteger)index {
 	return [self.adapter.sections indexOfObject:self];
