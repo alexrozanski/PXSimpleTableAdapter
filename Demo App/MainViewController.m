@@ -63,6 +63,8 @@
     NSArray *sections = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
     self.tableAdapter.sections = sections;
     
+    [firstSection release];
+    [secondSection release];
     [sections release];
 }
 
