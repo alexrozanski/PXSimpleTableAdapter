@@ -70,21 +70,22 @@
 
 - (void)setRows:(NSArray*)rows
 {
-    NSMutableArray *newRows = [rows mutableCopy];
-    
-    //Untag ourselves from the old rows
+	
+	//Untag ourselves from the old rows -- is this needed? Daniel.
     for(PXSimpleTableRow *theRow in _rows) {
         theRow.section = nil;
     }
-    
-    [_rows release];
-    _rows = newRows;
+	
+	id old = _rows;
+    _rows = [rows mutableCopy];
+    [old release];
     
     //Tag ourselves to the new rows
     for(PXSimpleTableRow *theRow in _rows) {
         theRow.section = self;
     }
-    
+	
+	[self.adapter.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 - (NSUInteger)index {
