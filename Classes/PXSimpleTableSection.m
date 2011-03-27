@@ -66,6 +66,31 @@
     [super dealloc];
 }
 
+#pragma mark - Row management
+
+- (void)removeRow:(PXSimpleTableRow *)row
+{
+	NSUInteger index = [_rows indexOfObject:row];
+	[_rows removeObject:row];
+	
+	NSArray *indexPaths = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:index inSection:self.index]];
+	[self.adapter.tableView deleteRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)addRow:(PXSimpleTableRow *)row 
+{
+	NSUInteger index = [_rows count];
+	[self insertRow:row atIndex:index];
+}
+
+- (void)insertRow:(PXSimpleTableRow *)row atIndex:(NSUInteger)index 
+{
+	[_rows insertObject:row atIndex:index];
+	
+	NSArray *indexPaths = [NSArray arrayWithObject:[NSIndexPath indexPathForRow:index inSection:self.index]];
+	[self.adapter.tableView insertRowsAtIndexPaths:indexPaths withRowAnimation:UITableViewRowAnimationFade];
+}
+
 #pragma mark - Custom Accessors
 
 - (void)setRows:(NSArray*)rows
@@ -87,6 +112,10 @@
 	
 	[self.adapter.tableView reloadSections:[NSIndexSet indexSetWithIndex:self.index] withRowAnimation:UITableViewRowAnimationFade];
 }
+
+/*- (NSArray *)rows {
+	return [[_rows copy] autorelease];
+}*/
 
 - (NSUInteger)index {
 	return [self.adapter.sections indexOfObject:self];

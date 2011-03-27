@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @class PXSimpleTableAdapter;
+@class PXSimpleTableRow;
 
 @interface PXSimpleTableSection : NSObject {
     PXSimpleTableAdapter *_adapter;
@@ -22,6 +23,15 @@
 @property (nonatomic, copy) NSString *sectionHeaderTitle;
 @property (nonatomic, copy) NSString *sectionFooterTitle;
 @property (nonatomic, retain) NSArray *rows;
+
+
+
+- (void)addRow:(PXSimpleTableRow *)row;
+- (void)insertRow:(PXSimpleTableRow *)row atIndex:(NSUInteger)index;
+- (void)removeRow:(PXSimpleTableRow *)row;
+
+
+
 
 @property (nonatomic, readonly) NSUInteger index;
 
