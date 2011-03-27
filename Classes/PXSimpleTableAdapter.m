@@ -88,6 +88,11 @@
                         newRow.icon = [UIImage imageNamed:iconName];
                     }
                     
+                    NSNumber *isDisclosureRow = [row objectForKey:@"isDisclosureRow"];
+                    if(isDisclosureRow&&[isDisclosureRow isKindOfClass:[NSNumber class]]) {
+                        newRow.disclosureRow = [isDisclosureRow boolValue];
+                    }
+                    
                     [rows addObject:newRow];
                     [newRow release];
                 }

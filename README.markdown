@@ -92,6 +92,7 @@ The structure of a valid plist is as follows:
                 <Single Row Dictionary>: {
                     title = "Row title";
                     iconName = "NameOfIconFileInBundle";
+                    isDisclosureRow = YES;
                 },
 
                 ...
