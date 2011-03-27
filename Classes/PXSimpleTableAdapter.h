@@ -21,7 +21,7 @@
 }
 
 @property (nonatomic, assign) IBOutlet id<PXSimpleTableAdapterDelegate> delegate;
-@property (nonatomic, assign) IBOutlet UITableView *tableView;
+@property (nonatomic, retain) IBOutlet UITableView *tableView;
 @property (nonatomic, retain) NSArray *sections;
 
 - (BOOL)setUpTableFromPropertyList:(id)propertyList;
