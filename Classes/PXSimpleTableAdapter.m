@@ -148,6 +148,11 @@
 	[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
 }
 
+- (PXSimpleTableSection*)sectionAtIndex:(NSUInteger)index
+{
+    return [self.sections objectAtIndex:index];
+}
+
 #pragma mark - Data Handling
 
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath
