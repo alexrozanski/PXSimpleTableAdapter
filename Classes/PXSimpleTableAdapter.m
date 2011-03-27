@@ -90,7 +90,12 @@
                     
                     NSNumber *isDisclosureRow = [row objectForKey:@"isDisclosureRow"];
                     if(isDisclosureRow&&[isDisclosureRow isKindOfClass:[NSNumber class]]) {
-                        newRow.disclosureRow = [isDisclosureRow boolValue];
+                        
+						if ([isDisclosureRow boolValue]) {
+							newRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+						} else {
+							newRow.accessoryType = UITableViewCellAccessoryNone;
+						}
                     }
                     
                     [rows addObject:newRow];
@@ -265,6 +270,19 @@
     if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:)]) {
         [self.delegate simpleTableAdapter:self didSelectRow:row];
     }
+}
+
+- (void)tableView:(UITableView *)tableView accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)indexPath {
+	
+	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
+	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
+	
+	PXSimpleTableRowSelectionHandler accessoryTappedBlock = row.accessoryTappedBlock;
+	if ((accessoryTappedBlock)) accessoryTappedBlock(row);
+	
+	if([self.delegate respondsToSelector:@selector(simpleTableAdapter:accessoryButtonTappedForRow:)]) {
+        [self.delegate simpleTableAdapter:self accessoryButtonTappedForRow:row];
+	}
 }
 
 @end

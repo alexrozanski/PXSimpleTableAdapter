@@ -8,16 +8,16 @@
 
 #import "PXSimpleTableRow.h"
 #import "PXSimpleTableRow+Private.h"
-
+#import "PXSimpleTableAdapter.h"
 
 @implementation PXSimpleTableRow
 
 @synthesize title = _title;
 @synthesize icon = _icon;
-@synthesize disclosureRow = _disclosureRow;
 @synthesize accessoryType = _accessoryType;
 @synthesize section = _section;
 @synthesize selectionHandler = _selectionHandler;
+@synthesize accessoryTappedBlock = _accessoryTappedBlock;
 
 + (id)rowWithTitle:(NSString*)title
 {
@@ -63,8 +63,38 @@
     [_title release], _title=nil;
     [_icon release], _icon=nil;
     [_selectionHandler release], _selectionHandler = nil;
+	[_accessoryTappedBlock release], _accessoryTappedBlock = nil;
 	
     [super dealloc];
+}
+
+#pragma mark - Setters
+
+- (void)setIcon:(UIImage *)icon {
+	
+	id old = _icon;
+	_icon = [icon retain];
+	[old release];
+	
+	[self.section.adapter.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPath] 
+										  withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)setTitle:(NSString *)title {
+	
+	id old = _title;
+	_title = [title retain];
+	[old release];
+	
+	[self.section.adapter.tableView reloadRowsAtIndexPaths:[NSArray arrayWithObject:self.indexPath] 
+										  withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - Getters
+
+- (NSIndexPath *)indexPath {
+	NSUInteger rowIndex = [self.section.rows indexOfObject:self];
+	return [NSIndexPath indexPathForRow:rowIndex inSection:self.section.index];
 }
 
 @end

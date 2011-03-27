@@ -19,17 +19,18 @@ typedef void (^PXSimpleTableRowSelectionHandler) (PXSimpleTableRow *row);
     NSString *_title;
     UIImage *_icon;
     PXSimpleTableRowSelectionHandler _selectionHandler;
-    BOOL _disclosureRow;
+	PXSimpleTableRowSelectionHandler _accessoryTappedBlock;
 	UITableViewCellAccessoryType _accessoryType;
 }
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *icon;
 @property (nonatomic, copy) PXSimpleTableRowSelectionHandler selectionHandler;
-@property (nonatomic, assign, getter=isDisclosureRow) BOOL disclosureRow;
+@property (nonatomic, copy) PXSimpleTableRowSelectionHandler accessoryTappedBlock;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 
 @property (nonatomic, readonly) PXSimpleTableSection *section;
+@property (nonatomic, readonly) NSIndexPath *indexPath;
 
 + (id)rowWithTitle:(NSString*)title;
 + (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon;
