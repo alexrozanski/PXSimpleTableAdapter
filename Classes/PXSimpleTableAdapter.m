@@ -175,10 +175,7 @@
 
 - (void)deselectRow:(PXSimpleTableRow*)row
 {
-    NSUInteger sectionIndex = row.indexPath.section;
-    NSUInteger rowIndex = [[row.section rows] indexOfObject:row];
-    
-    [self.tableView deselectRowAtIndexPath:[NSIndexPath indexPathForRow:rowIndex inSection:sectionIndex] animated:YES];
+    [self.tableView deselectRowAtIndexPath:row.indexPath animated:YES];
 }
 
 #pragma mark - Custom Accessors
