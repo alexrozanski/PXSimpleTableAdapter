@@ -102,6 +102,9 @@
                     [newRow release];
                 }
                 else {
+                    [rows release];
+                    [newSection release];
+                    [newSections release];
                     return NO;
                 }
             }
@@ -113,6 +116,7 @@
             [newSection release];
         }
         else {
+            [newSections release];
             return NO;
         }
     }
