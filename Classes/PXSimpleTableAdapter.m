@@ -122,15 +122,29 @@
     return YES;
 }
 
-#pragma mark - Data Handling
+#pragma mark - Section Management
 
 - (void)addSection:(PXSimpleTableSection*)section
 {
-    [_sections addObject:section];
-    [section setAdapter:self];
-    
-    [self.tableView reloadData];
+    NSUInteger index = [_sections count];
+	[self insertSection:section atIndex:index];
 }
+
+- (void)insertSection:(PXSimpleTableSection *)section atIndex:(NSUInteger)index 
+{
+	[_sections insertObject:section atIndex:index];
+	[self.tableView insertSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+- (void)removeSection:(PXSimpleTableSection *)section 
+{
+	NSUInteger index = [_sections indexOfObject:section];
+	[_sections removeObject:section];
+	
+	[self.tableView deleteSections:[NSIndexSet indexSetWithIndex:index] withRowAnimation:UITableViewRowAnimationFade];
+}
+
+#pragma mark - Data Handling
 
 - (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section
 {
