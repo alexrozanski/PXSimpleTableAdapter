@@ -11,21 +11,21 @@
 @class PXSimpleTableRow;
 @class PXSimpleTableSection;
 
-typedef void (^PXSimpleTableRowSelectionBlock) (PXSimpleTableRow *row);
+typedef void (^PXSimpleTableRowSelectionHandler) (PXSimpleTableRow *row);
 
 @interface PXSimpleTableRow : NSObject {
     PXSimpleTableSection *_section;
     
     NSString *_title;
     UIImage *_icon;
-    PXSimpleTableRowSelectionBlock _selectionBlock;
+    PXSimpleTableRowSelectionHandler _selectionHandler;
     BOOL _disclosureRow;
 	UITableViewCellAccessoryType _accessoryType;
 }
 
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, retain) UIImage *icon;
-@property (nonatomic, copy) PXSimpleTableRowSelectionBlock selectionBlock;
+@property (nonatomic, copy) PXSimpleTableRowSelectionHandler selectionHandler;
 @property (nonatomic, assign, getter=isDisclosureRow) BOOL disclosureRow;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
 
@@ -33,10 +33,10 @@ typedef void (^PXSimpleTableRowSelectionBlock) (PXSimpleTableRow *row);
 
 + (id)rowWithTitle:(NSString*)title;
 + (id)rowWithTitle:(NSString*)title icon:(UIImage*)icon;
-+ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock;
++ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionHandler:(PXSimpleTableRowSelectionHandler)selectionHandler;
 
 - (id)initWithTitle:(NSString*)title;
 - (id)initWithTitle:(NSString*)title icon:(UIImage*)icon;
-- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock;
+- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon selectionHandler:(PXSimpleTableRowSelectionHandler)selectionHandler;
 
 @end

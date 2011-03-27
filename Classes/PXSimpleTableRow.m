@@ -17,42 +17,42 @@
 @synthesize disclosureRow = _disclosureRow;
 @synthesize accessoryType = _accessoryType;
 @synthesize section = _section;
-@synthesize selectionBlock = _selectionBlock;
+@synthesize selectionHandler = _selectionHandler;
 
 + (id)rowWithTitle:(NSString*)title
 {
-    return [self rowWithTitle:title icon:nil selectionBlock:nil];
+    return [self rowWithTitle:title icon:nil selectionHandler:nil];
 }
 
 + (id)rowWithTitle:(NSString *)title icon:(UIImage*)icon
 {
-    return [[[self alloc] initWithTitle:title icon:icon selectionBlock:nil] autorelease];
+    return [[[self alloc] initWithTitle:title icon:icon selectionHandler:nil] autorelease];
 }
 
-+ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
++ (id)rowWithTitle:(NSString *)title icon:(UIImage *)icon selectionHandler:(PXSimpleTableRowSelectionHandler)selectionHandler
 {
-	return [[[self alloc] initWithTitle:title icon:icon selectionBlock:selectionBlock] autorelease];
+	return [[[self alloc] initWithTitle:title icon:icon selectionHandler:selectionHandler] autorelease];
 }
 
 #pragma mark - Init/Dealloc
 
 - (id)initWithTitle:(NSString*)title
 {
-	return [self initWithTitle:title icon:nil selectionBlock:nil];
+	return [self initWithTitle:title icon:nil selectionHandler:nil];
 }
 
 - (id)initWithTitle:(NSString*)title icon:(UIImage*)icon 
 {
-	return [self initWithTitle:title icon:icon selectionBlock:nil];
+	return [self initWithTitle:title icon:icon selectionHandler:nil];
 }
 
-- (id)initWithTitle:(NSString*)title icon:(UIImage*)icon selectionBlock:(PXSimpleTableRowSelectionBlock)selectionBlock
+- (id)initWithTitle:(NSString *)title icon:(UIImage *)icon selectionHandler:(PXSimpleTableRowSelectionHandler)selectionHandler
 {
     if((self = [super init])) {
         _title = [title copy];
         _icon = [icon retain];
-		_selectionBlock = [selectionBlock copy];
 		_accessoryType = UITableViewCellAccessoryNone;
+		_selectionHandler = [selectionHandler copy];
     }
     
     return self;
@@ -62,7 +62,7 @@
 {
     [_title release], _title=nil;
     [_icon release], _icon=nil;
-    [_selectionBlock release], _selectionBlock = nil;
+    [_selectionHandler release], _selectionHandler = nil;
 	
     [super dealloc];
 }
