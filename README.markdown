@@ -106,6 +106,11 @@ This can then be loaded in and set up by calling `-[PXSimpleTableAdapter setUpTa
 
 The sections array can optionally be wrapped in a dictionary, which would then be the root item in the property list. When `PXSimpleTableAdapter` looks for the sections array, if it is enclosed in a dictionary, the first array will be used as the sections array.
 
+Other contributions
+===========
+
+Thanks go to [Daniel Tull](https://github.com/danielctull) for his contributions to the project regarding selection block handlers.
+
 License
 =======
 
