@@ -146,26 +146,9 @@
 
 #pragma mark - Data Handling
 
-- (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section
-{
-    [(NSMutableArray*)section.rows addObject:row];
-    
-    [self.tableView reloadData];
-}
-
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath
 {
     return [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
-}
-
-- (NSInteger)indexOfSectionInTable:(PXSimpleTableSection*)section
-{
-    return [self.sections indexOfObject:section];
-}
-
-- (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row
-{
-    return [row.section.rows indexOfObject:row];
 }
 
 #pragma mark - Selection

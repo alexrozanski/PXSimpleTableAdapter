@@ -31,15 +31,8 @@
 - (void)insertSection:(PXSimpleTableSection *)section atIndex:(NSUInteger)index;
 - (void)removeSection:(PXSimpleTableSection *)section;
 
-
-- (void)addRow:(PXSimpleTableRow*)row toSection:(PXSimpleTableSection*)section;
-
 - (PXSimpleTableRow*)selectedRow;
 - (PXSimpleTableRow*)rowAtIndexPath:(NSIndexPath*)indexPath;
-
-
-- (NSInteger)indexOfSectionInTable:(PXSimpleTableSection*)section;
-- (NSInteger)indexOfRowInSection:(PXSimpleTableRow*)row;
 
 - (void)deselectRow:(PXSimpleTableRow*)row;
 
