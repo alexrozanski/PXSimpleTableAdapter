@@ -77,6 +77,19 @@ Although there is a demo project in the repository, here is a quick example of s
     [section1 release];
     [section2 release];
 
+Custom Cells
+------------
+
+Sometimes you may wish to use a customised cell other than a standard `UITableViewCell` with `PXSimpleTableAdapter`, for example displaying a cell with a `UISwitch` inside it (like in Settings.app). This can be achieved by subclassing `PXSimpleTableRow`, creating your own custom row classes.
+
+Once this is done, you can implement up to 3 methods in your `PXSimpleTableRow` subclass:
+
+1. `+newCellForRow` In this method you must return a newly created cell you want to use for the row in question. Since the method starts with "new", you *must* return a retained cell, in accordance with the Cocoa Memory Management Guidelines.
+2. `-setUpContentsOfCell:` In this method you are passed a cell to be set up with the values for that row. This is implemented in `PXSimpleTableRow` and simply sets the title, icon (if applicable) and accessory type on the cell, based on the row's data. If you want to do anything other than this, implement the method in your `PXSimpleTableRow` subclass and perform custom cell setup.
+3. `+cellIdentifier` This method returns an `NSString` which is the reusable identifier for the cell being used to display that row. By default it returns the class name of the Row subclass, but implementing this method in your `PXSimpleTableRow` subclass allows you to modify this. Note that for the table to function correctly, the reusable identifier associated with cells created in `+newCellForRow` and the reusable identifier returned here must be the same.
+
+For an example of using a custom cell, have a look at the `SwitchRow` and `SwitchCell` classes in the Demo App.
+
 Property List integration
 -------------------------
 
