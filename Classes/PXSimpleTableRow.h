@@ -40,4 +40,9 @@ typedef void (^PXSimpleTableRowSelectionHandler) (PXSimpleTableRow *row);
 - (id)initWithTitle:(NSString*)title icon:(UIImage*)icon;
 - (id)initWithTitle:(NSString *)title icon:(UIImage *)icon selectionHandler:(PXSimpleTableRowSelectionHandler)selectionHandler;
 
++ (NSString*)cellIdentifier;
++ (UITableViewCell*)newCellForRow;
+
+- (void)setUpContentsOfCell:(UITableViewCell*)cell;
+
 @end

@@ -231,21 +231,15 @@
 
 - (UITableViewCell*)tableView:(UITableView *)aTableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *cellIdentifier = @"SimpleTableCellIdentifier";
+    PXSimpleTableRow *row = [self rowAtIndexPath:indexPath];
     
-    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    UITableViewCell *cell = [aTableView dequeueReusableCellWithIdentifier:[[row class] cellIdentifier]];
     
     if(!cell) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
-                                       reuseIdentifier:cellIdentifier] autorelease];
+        cell = [[[row class] newCellForRow] autorelease];
     }
     
-    
-    PXSimpleTableRow *row = [[[self.sections objectAtIndex:indexPath.section] rows] objectAtIndex:indexPath.row];
-    
-    cell.textLabel.text = row.title;
-    cell.imageView.image = row.icon;
-    cell.accessoryType = row.accessoryType;
+    [row setUpContentsOfCell:cell];
     
     return cell;
 }

@@ -70,8 +70,8 @@
 
 #pragma mark - Setters
 
-- (void)setIcon:(UIImage *)icon {
-	
+- (void)setIcon:(UIImage *)icon
+{
 	id old = _icon;
 	_icon = [icon retain];
 	[old release];
@@ -80,8 +80,8 @@
 										  withRowAnimation:UITableViewRowAnimationFade];
 }
 
-- (void)setTitle:(NSString *)title {
-	
+- (void)setTitle:(NSString *)title
+{
 	id old = _title;
 	_title = [title retain];
 	[old release];
@@ -92,9 +92,32 @@
 
 #pragma mark - Getters
 
-- (NSIndexPath *)indexPath {
+- (NSIndexPath *)indexPath
+{
 	NSUInteger rowIndex = [self.section.rows indexOfObject:self];
 	return [NSIndexPath indexPathForRow:rowIndex inSection:self.section.index];
+}
+
+#pragma mark - Cell Handling
+
++ (NSString*)cellIdentifier
+{
+    return NSStringFromClass(self);
+}
+
++ (UITableViewCell*)newCellForRow
+{
+    UITableViewCell *newCell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                                      reuseIdentifier:[self cellIdentifier]];
+    
+    return newCell;
+}
+
+- (void)setUpContentsOfCell:(UITableViewCell*)cell
+{
+    cell.textLabel.text = self.title;
+    cell.imageView.image = self.icon;
+    cell.accessoryType = self.accessoryType;
 }
 
 @end

@@ -11,6 +11,9 @@
 		D27E87B3133C928A00D23593 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B2133C928A00D23593 /* UIKit.framework */; };
 		D27E87B5133C928A00D23593 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B4133C928A00D23593 /* Foundation.framework */; };
 		D27E87B7133C928A00D23593 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D27E87B6133C928A00D23593 /* CoreGraphics.framework */; };
+		D2A903CB134070A600B6D92E /* SwitchRow.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A903CA134070A600B6D92E /* SwitchRow.m */; };
+		D2A903CE1340710A00B6D92E /* SwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D2A903CD1340710A00B6D92E /* SwitchCell.m */; };
+		D2A903D0134071E500B6D92E /* SwitchCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D2A903CF134071E500B6D92E /* SwitchCell.xib */; };
 		D2D67E15133C946F0080953D /* SimpleTableDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */; };
 		D2D67E19133C94780080953D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D2D67E16133C94780080953D /* main.m */; };
 		D2D67E1D133C94810080953D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = D2D67E1B133C94810080953D /* InfoPlist.strings */; };
@@ -31,6 +34,11 @@
 		D27E87B2133C928A00D23593 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		D27E87B4133C928A00D23593 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D27E87B6133C928A00D23593 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D2A903C9134070A600B6D92E /* SwitchRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchRow.h; path = "Demo App/SwitchRow.h"; sourceTree = SOURCE_ROOT; };
+		D2A903CA134070A600B6D92E /* SwitchRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchRow.m; path = "Demo App/SwitchRow.m"; sourceTree = SOURCE_ROOT; };
+		D2A903CC1340710A00B6D92E /* SwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwitchCell.h; path = "Demo App/SwitchCell.h"; sourceTree = SOURCE_ROOT; };
+		D2A903CD1340710A00B6D92E /* SwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SwitchCell.m; path = "Demo App/SwitchCell.m"; sourceTree = SOURCE_ROOT; };
+		D2A903CF134071E500B6D92E /* SwitchCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = SwitchCell.xib; path = "Demo App/SwitchCell.xib"; sourceTree = SOURCE_ROOT; };
 		D2D67E13133C946F0080953D /* SimpleTableDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SimpleTableDemoAppDelegate.h; path = "Demo App/SimpleTableDemoAppDelegate.h"; sourceTree = SOURCE_ROOT; };
 		D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SimpleTableDemoAppDelegate.m; path = "Demo App/SimpleTableDemoAppDelegate.m"; sourceTree = SOURCE_ROOT; };
 		D2D67E16133C94780080953D /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = "Demo App/main.m"; sourceTree = SOURCE_ROOT; };
@@ -128,6 +136,7 @@
 				D2D67E13133C946F0080953D /* SimpleTableDemoAppDelegate.h */,
 				D2D67E14133C946F0080953D /* SimpleTableDemoAppDelegate.m */,
 				D2D67E1E133C948B0080953D /* MainWindow.xib */,
+				D2A903C41340702B00B6D92E /* Switch Row */,
 				D27E87D0133C93C300D23593 /* Main View */,
 				D2D67E3E133CAB460080953D /* Other View */,
 				D27E87B9133C928A00D23593 /* Supporting Files */,
@@ -144,6 +153,18 @@
 				D2D67E31133C99B40080953D /* MainView.xib */,
 			);
 			name = "Main View";
+			sourceTree = "<group>";
+		};
+		D2A903C41340702B00B6D92E /* Switch Row */ = {
+			isa = PBXGroup;
+			children = (
+				D2A903C9134070A600B6D92E /* SwitchRow.h */,
+				D2A903CA134070A600B6D92E /* SwitchRow.m */,
+				D2A903CC1340710A00B6D92E /* SwitchCell.h */,
+				D2A903CD1340710A00B6D92E /* SwitchCell.m */,
+				D2A903CF134071E500B6D92E /* SwitchCell.xib */,
+			);
+			name = "Switch Row";
 			sourceTree = "<group>";
 		};
 		D2D67E2E133C98C00080953D /* Model */ = {
@@ -225,6 +246,7 @@
 				D2D67E3D133CAB360080953D /* OtherView.xib in Resources */,
 				D2D67E40133CB2160080953D /* README.markdown in Resources */,
 				D25DDA73133E9EAB0086783B /* SimpleTable.plist in Resources */,
+				D2A903D0134071E500B6D92E /* SwitchCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -242,6 +264,8 @@
 				D2D67E32133C99B40080953D /* MainViewController.m in Sources */,
 				D2D67E37133C9CEB0080953D /* PXSimpleTableRow.m in Sources */,
 				D2D67E3C133CAB360080953D /* OtherViewController.m in Sources */,
+				D2A903CB134070A600B6D92E /* SwitchRow.m in Sources */,
+				D2A903CE1340710A00B6D92E /* SwitchCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

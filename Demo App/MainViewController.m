@@ -11,6 +11,8 @@
 #import "PXSimpleTableAdapter.h"
 #import "OtherViewController.h"
 
+#import "SwitchRow.h"
+
 @implementation MainViewController
 
 @synthesize tableAdapter;
@@ -41,11 +43,12 @@
     firstRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
     secondRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    PXSimpleTableRow *thirdRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
+    SwitchRow *switchRow = [SwitchRow rowWithTitle:@"Switch"];
+    switchRow.switchValue = YES;
     
     PXSimpleTableSection *firstSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Header"
                                                                                sectionFooterTitle:nil
-                                                                                             rows:[NSArray arrayWithObjects:firstRow, secondRow, thirdRow, nil]];
+                                                                                             rows:[NSArray arrayWithObjects:firstRow, secondRow, switchRow, nil]];
     
     
     //Set up the second section
