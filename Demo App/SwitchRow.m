@@ -41,8 +41,15 @@
 
 - (void)setUpContentsOfCell:(UITableViewCell *)cell
 {
+    [[(SwitchCell*)cell toggleSwitch] addTarget:self action:@selector(switchChanged:) forControlEvents:UIControlEventValueChanged];
+    
     [(SwitchCell*)cell titleLabel].text = self.title;
     [(SwitchCell*)cell toggleSwitch].on = self.switchValue;
+}
+
+- (IBAction)switchChanged:(id)sender
+{
+    self.switchValue = [(UISwitch*)sender isOn];
 }
 
 @end

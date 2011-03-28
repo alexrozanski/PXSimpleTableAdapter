@@ -95,12 +95,6 @@
 
 - (void)setRows:(NSArray*)rows
 {
-	
-	//Untag ourselves from the old rows -- is this needed? Daniel.
-    for(PXSimpleTableRow *theRow in _rows) {
-        theRow.section = nil;
-    }
-	
 	id old = _rows;
     _rows = [rows mutableCopy];
     [old release];

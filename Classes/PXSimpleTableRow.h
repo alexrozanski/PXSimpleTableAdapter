@@ -21,6 +21,8 @@ typedef void (^PXSimpleTableRowSelectionHandler) (PXSimpleTableRow *row);
     PXSimpleTableRowSelectionHandler _selectionHandler;
 	PXSimpleTableRowSelectionHandler _accessoryTappedBlock;
 	UITableViewCellAccessoryType _accessoryType;
+    
+    UITableViewCell *_representedCell;
 }
 
 @property (nonatomic, copy) NSString *title;
@@ -28,6 +30,7 @@ typedef void (^PXSimpleTableRowSelectionHandler) (PXSimpleTableRow *row);
 @property (nonatomic, copy) PXSimpleTableRowSelectionHandler selectionHandler;
 @property (nonatomic, copy) PXSimpleTableRowSelectionHandler accessoryTappedBlock;
 @property (nonatomic, assign) UITableViewCellAccessoryType accessoryType;
+@property (nonatomic, retain) UITableViewCell *representedCell;
 
 @property (nonatomic, readonly) PXSimpleTableSection *section;
 @property (nonatomic, readonly) NSIndexPath *indexPath;

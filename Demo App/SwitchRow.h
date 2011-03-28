@@ -15,4 +15,6 @@
 
 @property (nonatomic, assign) BOOL switchValue;
 
+- (IBAction)switchChanged:(id)sender;
+
 @end
