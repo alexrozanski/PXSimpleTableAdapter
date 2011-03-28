@@ -10,26 +10,42 @@ PXSimpleTableAdapter
 This interface is created using the following code:
 
     PXSimpleTableRow *firstRow = [PXSimpleTableRow rowWithTitle:@"First Row"];
-    [firstRow setDisclosureRow:YES];
+    firstRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     PXSimpleTableRow *secondRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
-    [secondRow setDisclosureRow:YES];
+    secondRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+
     PXSimpleTableRow *thirdRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
-
-    PXSimpleTableSection *firstSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Header" sectionFooterTitle:nil rows:[NSArray arrayWithObjects:firstRow, secondRow, thirdRow, nil]];
-
-
+    
+    NSArray *rows = [NSArray arrayWithObjects:firstRow, secondRow, thirdRow, nil];
+    
+    PXSimpleTableSection *firstSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Header"
+                                                                               sectionFooterTitle:nil
+	                                                                                         rows:rows];
+    
+    
     //Set up the second section
     PXSimpleTableRow *fourthRow = [PXSimpleTableRow rowWithTitle:@"A Row"];
+    
     PXSimpleTableRow *fifthRow = [PXSimpleTableRow rowWithTitle:@"Another Row"];
-    [fifthRow setDisclosureRow:YES];
+    fifthRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    
     PXSimpleTableRow *sixthRow = [PXSimpleTableRow rowWithTitle:@"Other Row"];
-    [sixthRow setDisclosureRow:YES];
+    sixthRow.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+	
+	rows = [NSArray arrayWithObjects:fourthRow, fifthRow, sixthRow, nil]
+    
+    PXSimpleTableSection *secondSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Another header"
+                                                                                sectionFooterTitle:nil
+																							  rows:rows];
 
-    PXSimpleTableSection *secondSection = [[PXSimpleTableSection alloc] initWithSectionHeaderTitle:@"Another header" sectionFooterTitle:nil rows:[NSArray arrayWithObjects:fourthRow, fifthRow, sixthRow, nil]];
-
-    //Set the table sections
+	//Set the table sections
     NSArray *sections = [[NSArray alloc] initWithObjects:firstSection, secondSection, nil];
     self.tableAdapter.sections = sections;
+
+    [firstSection release];
+    [secondSection release];
+    [sections release];
 
 
 How the classes work
