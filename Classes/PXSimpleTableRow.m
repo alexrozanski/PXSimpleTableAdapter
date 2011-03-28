@@ -18,7 +18,6 @@
 @synthesize section = _section;
 @synthesize selectionHandler = _selectionHandler;
 @synthesize accessoryTappedBlock = _accessoryTappedBlock;
-@synthesize representedCell = _representedCell;
 
 + (id)rowWithTitle:(NSString*)title
 {
@@ -65,7 +64,6 @@
     [_icon release], _icon=nil;
     [_selectionHandler release], _selectionHandler = nil;
 	[_accessoryTappedBlock release], _accessoryTappedBlock = nil;
-    [_representedCell release], _representedCell = nil;
 	
     [super dealloc];
 }
@@ -98,6 +96,11 @@
 {
 	NSUInteger rowIndex = [self.section.rows indexOfObject:self];
 	return [NSIndexPath indexPathForRow:rowIndex inSection:self.section.index];
+}
+
+- (UITableViewCell *)representedCell
+{
+	return [self.section.adapter.tableView cellForRowAtIndexPath:self.indexPath];
 }
 
 #pragma mark - Cell Handling

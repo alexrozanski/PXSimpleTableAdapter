@@ -239,7 +239,6 @@
         cell = [[[row class] newCellForRow] autorelease];
     }
     
-    row.representedCell = cell;
     [row setUpContentsOfCell:cell];
     
     return cell;
