@@ -263,9 +263,9 @@
 	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
 	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
 	
-	PXSimpleTableRowSelectionHandler selectionHandler = row.selectionHandler;
-	if(selectionHandler) { 
-        selectionHandler(row);
+	PXSimpleTableRowSelectionBlock selectionBlock = row.selectionBlock;
+	if(selectionBlock) { 
+        selectionBlock(row);
     }
 	
     if([self.delegate respondsToSelector:@selector(simpleTableAdapter:didSelectRow:)]) {
@@ -278,7 +278,7 @@
 	PXSimpleTableSection *section = [self.sections objectAtIndex:indexPath.section];
 	PXSimpleTableRow *row = [section.rows objectAtIndex:indexPath.row];
 	
-	PXSimpleTableRowSelectionHandler accessoryTappedBlock = row.accessoryTappedBlock;
+	PXSimpleTableRowSelectionBlock accessoryTappedBlock = row.accessoryTappedBlock;
 	if ((accessoryTappedBlock)) accessoryTappedBlock(row);
 	
 	if([self.delegate respondsToSelector:@selector(simpleTableAdapter:accessoryButtonTappedForRow:)]) {
